@@ -1,0 +1,53 @@
+.score {
+   font-weight: bold;
+   font-size: 32px;
+   line-height: 48px;
+   vertical-align: top;
+   margin-left: 8px;
+}
+
+.btn-toolbar {
+   margin: 0 0 10px 10px;
+}
+
+.btn-default {
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    background-repeat: repeat-x;
+    border-color: #dbdbdb;
+    border-color: #ccc;
+}
+
+.movie-detail {
+   .back {
+      display: block;
+      margin-top: 20px;
+   }
+   
+   .poster { min-width: 100px; }
+   
+   .info {
+      div.row > div:first-child {
+         text-align: right;
+         font-weight: bold;
+      }
+   }
+}
+
+.carousel .item img {
+   min-width: 200px;
+}
+
+@media (max-width: @screen-md-min) { 
+   .movie-detail {
+      .info {
+         div.row > div:first-child {
+            text-align: left;
+         }
+      }
+   }
+   
+}

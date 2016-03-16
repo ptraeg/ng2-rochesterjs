@@ -1,0 +1,49 @@
+<!-- View Mode Selection --> 
+<div>
+   <div class="btn-toolbar pull-right" role="toolbar">
+      <div class="btn-group">
+         <button type="button" class="btn btn-default" ng-click="viewMode = 'table'" ng-class="{active: viewMode == 'table'}">
+                  <span class="glyphicon glyphicon-list"></span>
+         </button>
+         <button type="button" class="btn btn-default" ng-click="viewMode = 'carousel'" ng-class="{active: viewMode == 'carousel'}">
+            <span class="glyphicon glyphicon-picture"></span>
+         </button>
+      </div>
+   </div>
+   <div class="clearfix"></div>
+</div>
+
+<!-- Table Mode --> 
+<table ng-if="viewMode === 'table'" class="table table-striped">
+   <thead>
+      <tr>
+         <th></th>
+         <th>Title</th>
+         <th>Year</th>
+         <th>Rating</th>
+         <th>Running Time</th>
+         <th>Tomatometer™</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr ng-repeat="movie in movies">
+         <th><a ng-href="#/movie/{{movie.id}}"><img ng-src="{{movie.posters.profile}}"/></a></th>
+         <td>{{movie.title}}</td>
+         <td>{{movie.year}}</td>
+         <td>{{movie.mpaa_rating}}</td>
+         <td>{{movie.runtime | min2HrMin}}</td>
+         <td><ng1-tomatometer ratings="movie.ratings"></ng1-tomatometer>&nbsp;<span class="score" ng-bind="::movie.ratings.critics_score"/></td>
+      </tr>
+   </tbody>
+</table>
+
+<!-- Carousel Mode --> 
+<uib-carousel ng-if="viewMode === 'carousel'" interval="myInterval" no-wrap="noWrapSlides" ng-click="goToDetail()">
+   <uib-slide ng-repeat="movie in movies" active="movie.active">
+      <img ng-src="{{movie.posters.profile}}" style="margin:auto;">
+      <div class="carousel-caption">
+         <h4>{{movie.title}}</h4>
+         <p>{{movie.year}}</p>
+      </div>
+   </uib-slide>
+</uib-carousel>

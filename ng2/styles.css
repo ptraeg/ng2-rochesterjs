@@ -1,0 +1,16 @@
+.movie-detail .poster {
+  min-width: 100px;
+}
+
+.movie-detail .row {
+  margin-top: 10px;
+}
+
+.movie-carousel-image {
+  margin:auto;
+  min-width: 200px;
+}
+
+.movie-table-image {
+  cursor: pointer;
+}

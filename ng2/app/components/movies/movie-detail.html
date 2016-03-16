@@ -1,0 +1,57 @@
+<div class="movie-detail container-fluid" *ngIf="movie">
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{movie.title}}</h2>
+    </div>
+    <div class="col-md-1 back">
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-2">
+      <img class="img-responsive center-block poster" [src]="movie.posters.profile">
+    </div>
+
+    <div class="col-md-10 info">
+      <div class="row">
+        <div class="col-md-2">
+          <label>Rating:</label>
+        </div>
+        <div class="col-md-10">{{movie.mpaa_rating}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Release Date:</label>
+        </div>
+        <div class="col-md-10">{{movie.release_dates.theater}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Critic Score:</label>
+        </div>
+        <div class="col-md-10">{{movie.ratings.critics_score}} ({{movie.ratings.critics_rating}})</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Audience Score:</label>
+        </div>
+        <div class="col-md-10">{{movie.ratings.audience_score}} ({{movie.ratings.audience_rating}})</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Synopsis:</label>
+        </div>
+        <div class="col-md-10">{{movie.synopsis}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Cast:</label>
+        </div>
+        <div class="col-md-10">
+          <movie-cast-list [movie]=movie></movie-cast-list>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

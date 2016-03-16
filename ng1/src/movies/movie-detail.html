@@ -1,0 +1,44 @@
+
+<div class="movie-detail container-fluid">
+   <div class="row">
+      <div class="col-md-11">
+         <h2>{{movie.title}}</h2>
+      </div>
+      <div class="col-md-1 back">
+         <a href="#/movies">&lt; Back</a>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-2">
+         <img class="img-responsive center-block poster" ng-src="{{movie.posters.profile}}">
+      </div>
+      <div class="col-md-10 info">
+         <div class="row">
+            <div class="col-md-2">Rating:</div>
+            <div class="col-md-10">{{movie.mpaa_rating}}</div>
+         </div>
+         <div class="row">
+            <div class="col-md-2">Release Date:</div>
+            <div class="col-md-10">{{movie.release_dates.theater}}</div>
+         </div>
+         <div class="row">
+            <div class="col-md-2">Critic Score:</div>
+            <div class="col-md-10">{{movie.ratings.critics_score}} ({{movie.ratings.critics_rating}})</div>
+         </div>
+         <div class="row">
+            <div class="col-md-2">Audience Score:</div>
+            <div class="col-md-10">{{movie.ratings.audience_score}} ({{movie.ratings.audience_rating}})</div>
+         </div>
+         <div class="row">
+            <div class="col-md-2">Synopsis:</div>
+            <div class="col-md-10">{{movie.synopsis}}</div>
+         </div>
+         <div class="row">
+            <div class="col-md-2">Cast:</div>
+            <div class="col-md-10">
+               <div ng-repeat="castmember in movie.abridged_cast">{{castmember.name}} - {{castmember.characters[0]}}</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
